@@ -28,7 +28,7 @@ function Navbar() {
       <div className='flex w-full h-12 justify-between m-2'>
         <div className='flex flex-col w-11/12'>
           <h1 className='text-xl text-white text-center'>VEKTOR</h1>
-          <h3><Quotes/></h3>
+          {/* <h3><Quotes/></h3> */}
         </div>
         <div className='flex'>
           <Avatar className='justify-end w-1/12'alt='userProfile' src='https://cdn.pixabay.com/photo/2020/09/25/16/50/portrait-5601950_640.jpg'onClick={handleClick}/>
