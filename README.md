@@ -71,8 +71,15 @@ To get started on running this application:
 #### Interface
 - Overview
   - Upon application launch, the localhost will launch a login page, if you do not have a login, please click the signUp button.
-  - Fill out the signUp form and click submit, then login with new username. This should bring you to your homepage
+  - Fill out the signUp form and click submit
     <br><img src="./client/assets/signUp.gif" width="800px"></img>
-
+  - Then login with new username. This should bring you to your homepage
+    <br><img src="./client/assets/Login.gif" width="800px"></img>
+  - Click New Entry to log in Blood Sugar and Blood Pressure levels
+    <br><img src="./client/assets/newEntry.gif" width="800px"></img>
   
+  
+
+
+
 
