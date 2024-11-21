@@ -69,7 +69,7 @@ To get started on running this application:
 - Overview
   - Upon application launch, the localhost will launch a login page, if you do not have a login, please click the signUp button.
   - Fill out the signUp form and click submit, then login with new username. This should bring you to your homepage
-    <br><img src="./client/assets/signUp.gif" width="800px"></img>
+    <!-- <br><img src="./client/assets/signUp.gif" width="800px"></img> -->
 
   
 
