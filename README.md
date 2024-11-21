@@ -43,3 +43,33 @@ VEKTOR is a an application designed to allow users to log their glucose levels a
       </td>
     </tr>
   </table>
+
+### Getting Started
+
+To get started on running this application: 
+
+  1. Fork the repo
+    - click on the __Fork__ button on the top right of the page
+    <br><img src="./client/assets/fork_button.jpg" width="300px"></img> 
+    - click on your handle to fork to your repo
+  
+  2. Clone newly forked repo onto local machine
+    - first, make sure you're on your new forked repo on GitHub
+    - copy and paste GitHub url from the right side of the page
+    <br><img src="./client/assets/clone-repo.png" width="300px"></img>
+    - enter the following line into your command line and insert your copied url instead of the quoted text:
+      ```
+      git clone 'copied url'
+      ```
+  3. Type 'npm run build' into command line
+
+  4. Type 'npm run dev' into command line
+
+#### Interface
+- Overview
+  - Upon application launch, the localhost will launch a login page, if you do not have a login, please click the signUp button.
+  - Fill out the signUp form and click submit, then login with new username. This should bring you to your homepage
+    <br><img src="./client/assets/signUp.gif" width="800px"></img>
+
+  
+
