@@ -19,6 +19,7 @@ VEKTOR is a an application designed to allow users to log their glucose levels a
 ## Features in progress
 1. Incorporate meal log feature to provide insight on foods that may have caused glucose spikes.
 2. Update About and Contact page
+3. Include better gif quality
 
 ## Our team
   <table>
