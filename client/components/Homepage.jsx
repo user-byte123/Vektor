@@ -76,6 +76,8 @@ function Homepage() {
       }
     })
     .then(console.log('successfully deleted'))
+    // reload the window to show the homepage without the deleted entry
+    .then(() => {window.location.reload()})
     .catch(err => console.log(err))
   }
 
@@ -133,7 +135,7 @@ function Homepage() {
   }
 
   return (
-    <div className='bg-white-50'>
+    <div className='bg-white-50 flex flex-col w-full min-h-screen bg-pastel-green'>
       <div>
         <Navbar />
       </div>
@@ -150,18 +152,19 @@ function Homepage() {
       </div>
       <div className='grid grid-cols-1 gap 4 sm:grid-cols-2 lg:grid-cols-3 p-5'>
         {data.map(item => (
-          <div key={item._id} className='flex bg-gray-500 rounded-md m-2 p-4 text-white'>
+          <div key={item._id} className='flex bg-darker-green rounded-md m-2 p-4 text-custom-tan'>
             <div className='w-2/3'>
               <div>{item.date}</div>
               <div className='flex'>
-                Blood Sugar: 
+                <h3 className='font-bold mr-1'>Blood Sugar: </h3>
                 <div className={item.fasting ? item.bloodSugar < 100 ? 'highlight':'' : item.bloodSugar < 130 ? 'highlight' : ''}>{item.bloodSugar}</div>mg/dL
               </div>
-              <div className='flex'>Blood Pressure: 
-                <div className={item.sysPressure < 120 ? 'highlight' : '' }>
+              <div className='flex'>
+                <h3 className='font-bold mr-1'>Blood Pressure: </h3>
+                <div className={item.sysPressure < 120 ? 'highlight' : item.sysPressure >= 140 ? 'overGoal':''}>
                   {item.sysPressure}   
                 </div> /
-                <div className={item.diaPressure < 80 ? 'highlight' : ''}>
+                <div className={item.diaPressure < 80 ? 'highlight' : item.sysPressure >=90 ? 'overGoal':''}>
                   {item.diaPressure}
                 </div>
                 mmHg
@@ -173,7 +176,8 @@ function Homepage() {
             </div>
           </div>
         ))}
-        <Modal isOpen={open} onClose={handleClose} onSubmit={handleSubmit}>
+        {/* passing the props to the children */}
+        <Modal isOpen={open} onClose={handleClose} onSubmit={handleSubmit} formData={formData} setFormData={setFormData}>
         </Modal>
       </div>
     </div>

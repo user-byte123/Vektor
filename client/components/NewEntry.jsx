@@ -31,7 +31,7 @@ function NewEntry(props) {
 
   const navigate = useNavigate();
   const saveEntry = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const body = {
       username,
       image,
@@ -54,6 +54,8 @@ function NewEntry(props) {
       const data = await response.json();
       console.log(data);
       console.log('Data Posted!');
+      // once the data is posted, navigate to homepage or refresh the page
+      window.location.reload();
       navigate('/homepage')
     } catch (error) {
       console.error('Error in front-end:', error.message);
@@ -63,7 +65,7 @@ function NewEntry(props) {
   const date = new Date();
 
   return (props.trigger) ? (
-    <div className='bg-blue-500 w-5/12 rounded-lg'>
+    <div className='bg-custom-tan w-5/12 rounded-lg'>
     <form className='entries-container p-4'>
       <div className='entries'>
         {image === '' || image === null ? ('') : 
@@ -90,7 +92,12 @@ function NewEntry(props) {
         </label>
         <FoodLog></FoodLog>
         <div id='newEntryBtns' className='flex justify-center'>
-          <button className='bigButtons mx-2' onClick={saveEntry}>
+          <button className='bigButtons mx-2' onClick={ (e) => {
+              //saves the value and creates a new card
+              saveEntry(e);
+              //close modal
+              props.setTrigger(false);
+            }}>
             Save Entry
           </button>
           <button className='bigButtons mx-2' onClick={() => props.setTrigger(false)}>Close</button>

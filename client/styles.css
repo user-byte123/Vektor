@@ -9,6 +9,9 @@ user's settings (JSON) and add to the last line 'css.lint.unknownAtRules': 'igno
   .highlight {
     @apply bg-green-600 font-bold
   }
+  .overGoal {
+    @apply bg-red-600 font-bold
+  }
 }
 
 @layer utilities {
@@ -19,12 +22,12 @@ user's settings (JSON) and add to the last line 'css.lint.unknownAtRules': 'igno
 
 @layer utilities {
   .bigButtons:hover {
-    @apply bg-blue-500 
+    @apply bg-pastel-green 
   }
 }
 
 @layer utilities {
   .bigButtons {
-    @apply bg-blue-600 rounded-lg text-white font-bold p-2
+    @apply bg-darkest-green rounded-lg text-white font-bold p-2
   }
 }

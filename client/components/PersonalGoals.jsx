@@ -9,12 +9,6 @@ export default function PersonalGoals() {
       <div className='flex justify-center bg-slate-300'>
         <div className='flex-col item-center bg-slate-500 w-7/12'>
           <div className='flex-col'>
-            <div>
-              Sugar Goal: 
-            </div>
-            <div>
-              Blood Pressure Goal:
-            </div>
           <div>
             <AccordionRepeat
             summary={<div>Diabetes Goals</div>}

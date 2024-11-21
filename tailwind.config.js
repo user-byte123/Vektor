@@ -4,7 +4,15 @@ module.exports = {
   wrong, I originally had it as ./vekt/client/component, can just be ./client*/
   content: ['./client/**/*.{js,jsx,html}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-tan': '#dad7cd',
+        'pastel-green': '#a3b18a',
+        'forest-green':'#588157',
+        'darker-green':'#3a5a40',
+        'darkest-green':'#344e41',
+      },
+    },
   },
   plugins: [],
 }

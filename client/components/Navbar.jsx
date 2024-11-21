@@ -7,6 +7,7 @@ import Menu from '@mui/material/Menu';
 import { MenuItem } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGear, faBullseye, faSignOut, faPlay} from '@fortawesome/free-solid-svg-icons'
+import CallMadeIcon from '@mui/icons-material/CallMade';
 
 function Navbar() {
 
@@ -24,10 +25,10 @@ function Navbar() {
   
 
   return (
-    <nav className='flex w-full bg-gray-500'>
-      <div className='flex w-full h-12 justify-between m-2'>
+    <nav className='flex w-full bg-custom-tan'>
+      <div className='flex w-full h-12 justify-center items-center'>
         <div className='flex flex-col w-11/12'>
-          <h1 className='text-xl text-white text-center'>VEKTOR</h1>
+          <h1 className='font-bold text-2xl text-darker-green text-center'><CallMadeIcon></CallMadeIcon>VEKTOR</h1>
           {/* <h3><Quotes/></h3> */}
         </div>
         <div className='flex'>

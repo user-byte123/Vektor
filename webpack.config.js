@@ -20,6 +20,10 @@ const config = {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
         exclude: /node_modules/
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|svg)$/i,
+        type: 'asset/resource',
       }
     ]
   },

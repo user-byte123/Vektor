@@ -2,9 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
+import CallMadeIcon from '@mui/icons-material/CallMade';
+import imageForVektor from '../assets/vektor.jpg'
 
 
 function Login() {
+    React.useEffect(() => {
+        // disables the scrolling
+        document.body.style.overflow = 'hidden';
+    })
     const [ loginData, setLogin ] = useState({
         username:'',
         password:'',
@@ -49,34 +55,39 @@ function Login() {
  }
         
     return(
-        <div className='loginPageContainer'>
-            <div className='loginContainer'>
-                <div className='loginCard'>
-                    <h2 className='loginTitle'>Login</h2>
-                    <form className='loginInputForm' onSubmit={handleSubmit}>
-                        <div className='loginLabelDiv'>
-                            <label >Username: </label>
-                        </div>
-                        <div >
-                            <input className='loginInput' type='text' name='username' placeholder='Enter Username' onChange={handleChange} value= {loginData.username}></input>
-                        </div>
-                        <div className='loginLabelDiv'>
-                            <label >Password: </label>
-                        </div>
-                        <div>
-                            <input className='loginInput' type='password' name = 'password' placeholder='Enter Password' onChange={handleChange}
-                            value = {loginData.password}></input>
-                        </div>
-                        <div className='loginBtn'>
-                            <button type='submit'><strong>Sign in</strong></button>
-                        </div>
-                        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-                    </form>
+        <div className='flex flex-col items-center'>
+            <div className='bg-custom-tan h-1/4 w-full'>
+                <div className='flex font-bold  m-1 p-3 text-darker-green text-2xl items-center'>
+                    <CallMadeIcon></CallMadeIcon>Vektor
                 </div>
             </div>
-            <div >
-                <h3 id="overlay">Vektor</h3>
-                <img className='loginImg' src="https://pics.craiyon.com/2023-06-26/5c43832150134eb99cdee5fde6ffa06b.webp" alt="" />
+            <div className='flex flex-row w-full min-h-screen bg-slate-50'>
+                <div className='flex flex-col w-2/3 min-h-screen'>
+                    <img className='h-full opacity-80' src={imageForVektor} alt="Vektor image" />
+                </div>
+                <div className='flex flex-col items-center justify-center border-solid w-1/3 bg-pastel-green'>
+                    <div className='flex bg-white px-28 py-10 rounded-lg shadow-xl'>
+                        <form className='flex flex-col' onSubmit={handleSubmit}>
+                            <div className='flex flex-col'>
+                                <label className='flex text-darkest-green font-bold'>Username: </label>
+                                <div className='flex justify-center'>
+                                    <input className='flex text-center rounded-lg border border-solid border-gray-800 pr-4 pl-4 p-1' type='text' name='username' placeholder='Enter Username' onChange={handleChange} value= {loginData.username}></input>
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-center'>
+                                <label className='text-darkest-green font-bold'>Password: </label>
+                                <div className='flex justify-center'> 
+                                    <input className='flex text-center rounded-lg border border-solid border-gray-800 pr-4 pl-4 p-1' type='password' name = 'password' placeholder='Enter Password' onChange={handleChange}
+                                    value = {loginData.password}></input>
+                                </div>
+                            </div>
+                            <div className='flex justify-center w-100'>
+                                <button type='submit' className='mt-4 mb-4 p-2 (pr-2 pl-2) bg-darker-green rounded-lg text-white hover:bg-custom-tan hover:text-darker-green'><strong>Sign in</strong></button>
+                            </div>
+                            <p className='flex text-darker-green justify-center'>Don't have an account? <Link to="/signup" className='text-red-500 hover:underline font-bold'>Sign Up</Link></p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     )

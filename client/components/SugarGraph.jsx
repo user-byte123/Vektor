@@ -39,10 +39,39 @@ function LineGraph({username}) {
         setData(chartData)
       })
     })
-    
+
+    const options = {
+      responsive: true, 
+      plugins: {
+        legend: {
+          labels: {
+            color: 'dark-grey',
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: {
+            color: 'dark-grey',
+          },
+          ticks: {
+            color: 'dark-grey'
+          }
+        },
+        y: {
+          grid: {
+            color: 'dark-grey',
+          },
+          ticks: {
+            color: 'dark-grey'
+          }
+        }
+      }
+    }
+
   return (
-    <div style={{ width: 700 }}>
-      <Line data={userData} />
+    <div className='text-black' style={{ width: 700 }}>
+      <Line data={userData} options={options}/>
     </div>
   )
 }
